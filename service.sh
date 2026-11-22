@@ -113,10 +113,9 @@ echo "service=$endmsg" >> $tmpfolder/logs/boot_stage_time.sh
 ## Props ##
 resetprop -w sys.boot_completed 0
 
-# Commeneted out these first then remove this later when there are no problems
-#check_missing_prop "ro.boot.vbmeta.invalidate_on_error" yes
-#check_missing_prop "ro.boot.vbmeta.avb_version" "1.2"
-#check_missing_prop "ro.boot.vbmeta.hash_alg" "sha256"
+check_missing_prop "ro.boot.vbmeta.invalidate_on_error" yes
+check_missing_prop "ro.boot.vbmeta.avb_version" "1.2"
+check_missing_prop "ro.boot.vbmeta.hash_alg" "sha256"
 
 check_missing_match_prop "ro.boot.vbmeta.device_state" "locked"
 check_missing_match_prop "ro.boot.verifiedbootstate" "green"
